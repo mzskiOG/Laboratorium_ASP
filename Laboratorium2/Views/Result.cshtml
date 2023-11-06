@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Result";
+}
+
+<h1>Calculation Result</h1>
+
+@if (Model != null && !string.IsNullOrEmpty(Model.Result))
+{
+    <h2>Result</h2>
+    <p>@Model.Result</p>
+}
+else
+{
+    <p>Error occurred while processing the request.</p>
+}
+
+
+@if (!string.IsNullOrEmpty(ViewBag.Error))
+{
+        <div class="alert alert-danger">@ViewBag.Error</div>
+}
+else if (!string.IsNullOrEmpty(ViewBag.Result))
+{
+        <div class="alert alert-success">@ViewBag.Result</div>
+}
+
+<a asp-action="Index">Back to Calculator</a>

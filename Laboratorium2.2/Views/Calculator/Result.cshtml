@@ -1,0 +1,18 @@
+﻿@model Calculator
+
+@{
+    ViewData["Title"] = "Result";
+}
+
+<div class="container">
+    <h2>Wynik obliczeń</h2>
+    @if (Model.IsValid())
+    {
+        <p>@Model.X @Model.Op @Model.Y =</p>
+        <h3>@Model.Calculate()</h3>
+    }
+    else
+    {
+        <p>Błąd: Nieprawidłowe dane wejściowe.</p>
+    }
+</div>
